@@ -28,7 +28,5 @@ public class Main {
 		} catch (InvocationTargetException | InterruptedException e) {
 			e.printStackTrace();
 		}
-		
-		//ctrl.endDB();
 	}
 }
