@@ -1,0 +1,6 @@
+DROP TABLE ATT_Attendance
+DROP TABLE ATT_Group_Membership
+DROP TABLE ATT_Meetings
+DROP TABLE ATT_Members
+DROP TABLE ATT_Status
+DROP TABLE ATT_Groups

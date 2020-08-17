@@ -1,0 +1,10 @@
+{
+	"settings" : {
+		"client" : "mysql",
+		"host" : "192.168.2.105",
+		"port" : "3306",
+		"sid" : "ATT",
+		"username" : "root",
+		"password" : "root"
+	}
+}

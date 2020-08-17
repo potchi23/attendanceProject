@@ -1,0 +1,6 @@
+CREATE TABLE ATT_Groups(group_name VARCHAR(10) PRIMARY KEY)
+CREATE TABLE ATT_Status(member_status VARCHAR(10) PRIMARY KEY)
+CREATE TABLE ATT_Members(member_id VARCHAR(4) PRIMARY KEY, memberName VARCHAR(30) NOT NULL,memberMiddleName VARCHAR(30) NOT NULL,memberSurname VARCHAR(30) NOT NULL,member_address VARCHAR(50),member_telephone VARCHAR(12),member_status VARCHAR(10) NOT NULL,member_group VARCHAR(10) NOT NULL,FOREIGN KEY(member_group) REFERENCES ATT_Groups(group_name), FOREIGN KEY(member_status) REFERENCES ATT_Status(member_status))
+CREATE TABLE ATT_Meetings(meeting_name VARCHAR(30),meeting_date DATE,CONSTRAINT meetings PRIMARY KEY(meeting_name, meeting_date))
+CREATE TABLE ATT_Group_Membership(member_id VARCHAR(4),group_name VARCHAR(10),FOREIGN KEY(member_id) REFERENCES ATT_Members(member_id),FOREIGN KEY(group_name) REFERENCES ATT_Groups(group_name))
+CREATE TABLE ATT_Attendance(member_id VARCHAR(4),meeting_name VARCHAR(30),meeting_date DATE,meeting_time TIMESTAMP,FOREIGN KEY(member_id) REFERENCES ATT_Members(member_id),FOREIGN KEY(meeting_name, meeting_date) REFERENCES ATT_Meetings(meeting_name, meeting_date) ,CONSTRAINT attendance PRIMARY KEY(member_id, meeting_name, meeting_date))
