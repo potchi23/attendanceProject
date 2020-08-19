@@ -1,6 +1,7 @@
 package utils;
 
 import java.sql.*;
+import java.util.TimeZone;
 
 public class SQLUtils {
 	private Statement _stmt;
@@ -18,7 +19,7 @@ public class SQLUtils {
 		//load drivers
 		if(client.equals("mysql")) {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			url.append("jdbc:mysql://").append(host).append(":").append(port).append("/").append(sid);
+			url.append("jdbc:mysql://").append(host).append(":").append(port).append("/").append(sid).append("?serverTimezone=").append(TimeZone.getDefault().getID());
 		}
 		
 		else if(client.equals("oracle")) {
