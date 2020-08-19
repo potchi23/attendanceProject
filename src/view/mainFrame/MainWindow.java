@@ -427,7 +427,7 @@ public class MainWindow {
 					status.setForeground(Color.GREEN);
 					insertButton.setEnabled(true);
 					createButton.setEnabled(true);
-					botInfo.setText(client + ":" + host + ":" + port + ":" + sid);
+					botInfo.setText(client + ":" + host + ":" + port + "/" + sid);
 				} catch (ClassNotFoundException e) {
 					status.setText("Disconnected");
 					status.setFont(new Font("Arial", Font.BOLD, 10));
